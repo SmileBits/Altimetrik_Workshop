@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B740E9258750D5F8083204D8 /* Pods_AltimetrikWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC8A93A3F1D24BFBF82355B /* Pods_AltimetrikWeatherTests.framework */; };
+		B81234E07C4A1BA5EAAC867A /* Pods_AltimetrikWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A167303DAFEF0652603AC150 /* Pods_AltimetrikWeather.framework */; };
 		EDF47B2C242F90A500861B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF47B2B242F90A500861B23 /* AppDelegate.swift */; };
 		EDF47B2E242F90A500861B23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF47B2D242F90A500861B23 /* SceneDelegate.swift */; };
 		EDF47B30242F90A500861B23 /* WeatherInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF47B2F242F90A500861B23 /* WeatherInformationViewController.swift */; };
@@ -33,6 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B41D26BD9E5B07F5F5B707A /* Pods-AltimetrikWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltimetrikWeatherTests.release.xcconfig"; path = "Target Support Files/Pods-AltimetrikWeatherTests/Pods-AltimetrikWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		29E4B71179033A68E8D56CFF /* Pods-AltimetrikWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltimetrikWeather.debug.xcconfig"; path = "Target Support Files/Pods-AltimetrikWeather/Pods-AltimetrikWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		7C2373BA7E50029524F0A32B /* Pods-AltimetrikWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltimetrikWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-AltimetrikWeatherTests/Pods-AltimetrikWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A167303DAFEF0652603AC150 /* Pods_AltimetrikWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltimetrikWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49FCE6E898C91B97A1422BB /* Pods-AltimetrikWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltimetrikWeather.release.xcconfig"; path = "Target Support Files/Pods-AltimetrikWeather/Pods-AltimetrikWeather.release.xcconfig"; sourceTree = "<group>"; };
+		DDC8A93A3F1D24BFBF82355B /* Pods_AltimetrikWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltimetrikWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF47B28242F90A500861B23 /* AltimetrikWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltimetrikWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF47B2B242F90A500861B23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF47B2D242F90A500861B23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B81234E07C4A1BA5EAAC867A /* Pods_AltimetrikWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,18 +73,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B740E9258750D5F8083204D8 /* Pods_AltimetrikWeatherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AA72C1FA61323B1C10735F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A167303DAFEF0652603AC150 /* Pods_AltimetrikWeather.framework */,
+				DDC8A93A3F1D24BFBF82355B /* Pods_AltimetrikWeatherTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3319E2266AE61B5B8A19BFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29E4B71179033A68E8D56CFF /* Pods-AltimetrikWeather.debug.xcconfig */,
+				B49FCE6E898C91B97A1422BB /* Pods-AltimetrikWeather.release.xcconfig */,
+				7C2373BA7E50029524F0A32B /* Pods-AltimetrikWeatherTests.debug.xcconfig */,
+				1B41D26BD9E5B07F5F5B707A /* Pods-AltimetrikWeatherTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EDF47B1F242F90A500861B23 = {
 			isa = PBXGroup;
 			children = (
 				EDF47B2A242F90A500861B23 /* AltimetrikWeather */,
 				EDF47B41242F90A700861B23 /* AltimetrikWeatherTests */,
 				EDF47B29242F90A500861B23 /* Products */,
+				B3319E2266AE61B5B8A19BFF /* Pods */,
+				6AA72C1FA61323B1C10735F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF47B47242F90A700861B23 /* Build configuration list for PBXNativeTarget "AltimetrikWeather" */;
 			buildPhases = (
+				53B7AD3E92BDD554B8129543 /* [CP] Check Pods Manifest.lock */,
 				EDF47B24242F90A500861B23 /* Sources */,
 				EDF47B25242F90A500861B23 /* Frameworks */,
 				EDF47B26242F90A500861B23 /* Resources */,
+				6D19310C0F88A57C3B669F3B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF47B4A242F90A700861B23 /* Build configuration list for PBXNativeTarget "AltimetrikWeatherTests" */;
 			buildPhases = (
+				1D6EADBE4DA1BE13840A900B /* [CP] Check Pods Manifest.lock */,
 				EDF47B3A242F90A700861B23 /* Sources */,
 				EDF47B3B242F90A700861B23 /* Frameworks */,
 				EDF47B3C242F90A700861B23 /* Resources */,
@@ -268,6 +304,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D6EADBE4DA1BE13840A900B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AltimetrikWeatherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53B7AD3E92BDD554B8129543 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AltimetrikWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D19310C0F88A57C3B669F3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AltimetrikWeather/Pods-AltimetrikWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AltimetrikWeather/Pods-AltimetrikWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AltimetrikWeather/Pods-AltimetrikWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDF47B24242F90A500861B23 /* Sources */ = {
@@ -440,6 +540,7 @@
 		};
 		EDF47B48242F90A700861B23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29E4B71179033A68E8D56CFF /* Pods-AltimetrikWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +559,7 @@
 		};
 		EDF47B49242F90A700861B23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B49FCE6E898C91B97A1422BB /* Pods-AltimetrikWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +578,7 @@
 		};
 		EDF47B4B242F90A700861B23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C2373BA7E50029524F0A32B /* Pods-AltimetrikWeatherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +601,7 @@
 		};
 		EDF47B4C242F90A700861B23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B41D26BD9E5B07F5F5B707A /* Pods-AltimetrikWeatherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

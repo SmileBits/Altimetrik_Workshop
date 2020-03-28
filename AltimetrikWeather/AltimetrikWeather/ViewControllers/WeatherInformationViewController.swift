@@ -21,6 +21,8 @@ class WeatherInformationViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    private var detailWeatherViewBottomConstraint:NSLayoutConstraint!
+    
     //This is the detail view that shows detailed information about the location.
     var detailWeatherView:DetailWeatherView?
    
@@ -59,7 +61,20 @@ class WeatherInformationViewController: UIViewController {
     }
     
     private func updateMapView(){
-        print("\(weatherViewModel?.lat ?? "") - \(weatherViewModel?.long ?? "") - \(weatherViewModel?.timeZoneDescription ?? "")")
+        //print("\(weatherViewModel?.lat ?? "") - \(weatherViewModel?.long ?? "") - \(weatherViewModel?.timeZoneDescription ?? "")")
+        self.detailWeatherView = DetailWeatherView(frame: .zero, weatherViewModel: weatherViewModel!)
+        view.addSubview(detailWeatherView!)
+        detailWeatherViewBottomConstraint = detailWeatherView!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 400)
+        NSLayoutConstraint.activate([
+            detailWeatherView!.heightAnchor.constraint(equalToConstant: 400),
+            detailWeatherView!.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            detailWeatherView!.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            detailWeatherViewBottomConstraint
+        ])
+        
+        UIView.animate(withDuration: 2.5) { [weak self] in
+            self?.detailWeatherViewBottomConstraint.constant = 0
+        }
     }
 
 }
@@ -67,9 +82,8 @@ class WeatherInformationViewController: UIViewController {
 extension WeatherInformationViewController : UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let value = textField.text{
-            //Proper parsing
             if let _ = Double(value){
-                //Input is proper.
+                //Input is correct.
             }else{
                 textField.text = ""
                 textField.placeholder = "Please input a numerical value"
