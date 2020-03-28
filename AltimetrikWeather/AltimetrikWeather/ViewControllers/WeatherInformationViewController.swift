@@ -63,6 +63,11 @@ class WeatherInformationViewController: UIViewController {
     private func updateMapView(){
         //print("\(weatherViewModel?.lat ?? "") - \(weatherViewModel?.long ?? "") - \(weatherViewModel?.timeZoneDescription ?? "")")
         self.detailWeatherView = DetailWeatherView(frame: .zero, weatherViewModel: weatherViewModel!)
+        
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDownDetailView(_:)))
+        swipeDownGesture.direction = .down
+        detailWeatherView?.addGestureRecognizer(swipeDownGesture)
+        
         view.addSubview(detailWeatherView!)
         detailWeatherViewBottomConstraint = detailWeatherView!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 400)
         NSLayoutConstraint.activate([
@@ -72,8 +77,16 @@ class WeatherInformationViewController: UIViewController {
             detailWeatherViewBottomConstraint
         ])
         
-        UIView.animate(withDuration: 2.5) { [weak self] in
+        UIView.animate(withDuration: 0.1) { [weak self] in
             self?.detailWeatherViewBottomConstraint.constant = 0
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func swipeDownDetailView(_ sender:UISwipeGestureRecognizer){
+        UIView.animate(withDuration: 0.75) { [weak self] in
+            self?.detailWeatherViewBottomConstraint.constant = 400
+            self?.view.layoutIfNeeded()
         }
     }
 

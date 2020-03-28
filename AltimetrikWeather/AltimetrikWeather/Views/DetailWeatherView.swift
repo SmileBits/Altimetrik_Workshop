@@ -51,6 +51,7 @@ class DetailWeatherView : RoundUIView{
     }
     
     private func setupView(){
+        detailSwitch.addTarget(self, action: #selector(didTapSwitch(_:)), for: .valueChanged)
         setDailyGraph()
         addSubview(detailSwitch)
         addSubview(chartViewContainer)
@@ -79,12 +80,18 @@ class DetailWeatherView : RoundUIView{
     }
     
     fileprivate func setDailyGraph(){
+        
+        if let hourlyView = self.viewWithTag(21){
+            hourlyView.removeFromSuperview()
+        }
+        
         self.dailyChartView = LineChartView()
+        dailyChartView?.isUserInteractionEnabled = false
         dailyChartView?.translatesAutoresizingMaskIntoConstraints = false
+        dailyChartView?.tag = 20
         
         //MARK: TESTING DATA
         let yVals1 = (0..<14).map { (i) -> ChartDataEntry in
-            let mult = 78 / 2
             let val = Double(arc4random_uniform(8) + 50)
             return ChartDataEntry(x: Double(i), y: val)
         }
@@ -148,12 +155,90 @@ class DetailWeatherView : RoundUIView{
     }
     
     fileprivate func setHourlyGraph(){
+        
+        if let dailyView = self.viewWithTag(20){
+            dailyView.removeFromSuperview()
+        }
+        
         self.hourlyChartView = LineChartView()
         hourlyChartView?.translatesAutoresizingMaskIntoConstraints = false
+        hourlyChartView?.isUserInteractionEnabled = false
+        hourlyChartView?.tag = 21
+     
+        //MARK: TESTING DATA
+        let yVals1 = (0..<14).map { (i) -> ChartDataEntry in
+            //let mult = 90 / 2
+            let val = Double(arc4random_uniform(8) + 50)
+            return ChartDataEntry(x: Double(i), y: val)
+        }
+        let yVals2 = (0..<14).map { (i) -> ChartDataEntry in
+            let val = Double(arc4random_uniform(87) + 450)
+            return ChartDataEntry(x: Double(i), y: val)
+        }
+        let yVals3 = (0..<14).map { (i) -> ChartDataEntry in
+            let val = Double(arc4random_uniform(90) + 500)
+            return ChartDataEntry(x: Double(i), y: val)
+        }
+
+        let set1 = LineChartDataSet(entries: yVals1, label: "DataSet 1")
+        set1.axisDependency = .left
+        set1.setColor(UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1))
+        set1.setCircleColor(.white)
+        set1.lineWidth = 2
+        set1.circleRadius = 3
+        set1.fillAlpha = 65/255
+        set1.fillColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
+        set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        set1.drawCircleHoleEnabled = false
+        
+        let set2 = LineChartDataSet(entries: yVals2, label: "DataSet 2")
+        set2.axisDependency = .right
+        set2.setColor(.blue)
+        set2.setCircleColor(.white)
+        set2.lineWidth = 2
+        set2.circleRadius = 3
+        set2.fillAlpha = 65/255
+        set2.fillColor = .red
+        set2.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        set2.drawCircleHoleEnabled = false
+
+        let set3 = LineChartDataSet(entries: yVals3, label: "DataSet 3")
+        set3.axisDependency = .right
+        set3.setColor(.green)
+        set3.setCircleColor(.white)
+        set3.lineWidth = 2
+        set3.circleRadius = 3
+        set3.fillAlpha = 65/255
+        set3.fillColor = UIColor.yellow.withAlphaComponent(200/255)
+        set3.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        set3.drawCircleHoleEnabled = false
+        
+        let data = LineChartData(dataSets: [set1, set2, set3])
+        data.setValueTextColor(.white)
+        data.setValueFont(.systemFont(ofSize: 9))
+        
+        hourlyChartView?.data = data
+        
+        chartViewContainer.addSubview(hourlyChartView!)
+        
+        NSLayoutConstraint.activate([
+            hourlyChartView!.topAnchor.constraint(equalTo: chartViewContainer.topAnchor, constant: 0),
+            hourlyChartView!.leadingAnchor.constraint(equalTo: chartViewContainer.leadingAnchor, constant: 0),
+            hourlyChartView!.trailingAnchor.constraint(equalTo: chartViewContainer.trailingAnchor, constant: 0),
+            hourlyChartView!.bottomAnchor.constraint(equalTo: chartViewContainer.bottomAnchor, constant: 0)
+        ])
     }
     
     @objc fileprivate func didTapDismiss(_ sender:UIButton){
         self.delegate?.dismiss()
+    }
+    
+    @objc fileprivate func didTapSwitch(_ sender:UISegmentedControl){
+        if sender.selectedSegmentIndex == 0{
+            self.setHourlyGraph()
+        }else if sender.selectedSegmentIndex == 1{
+            self.setDailyGraph()
+        }
     }
     
     required init?(coder: NSCoder) {
