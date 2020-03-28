@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherInformationViewController.swift
 //  AltimetrikWeather
 //
 //  Created by Alberto Echeverri on 3/28/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WeatherInformationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
