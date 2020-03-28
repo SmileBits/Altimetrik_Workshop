@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDF47B2C242F90A500861B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF47B2B242F90A500861B23 /* AppDelegate.swift */; };
+		EDF47B2E242F90A500861B23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF47B2D242F90A500861B23 /* SceneDelegate.swift */; };
+		EDF47B30242F90A500861B23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF47B2F242F90A500861B23 /* ViewController.swift */; };
+		EDF47B33242F90A500861B23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF47B31242F90A500861B23 /* Main.storyboard */; };
+		EDF47B35242F90A700861B23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF47B34242F90A700861B23 /* Assets.xcassets */; };
+		EDF47B38242F90A700861B23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF47B36242F90A700861B23 /* LaunchScreen.storyboard */; };
+		EDF47B43242F90A700861B23 /* AltimetrikWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF47B42242F90A700861B23 /* AltimetrikWeatherTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDF47B3F242F90A700861B23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDF47B20242F90A500861B23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDF47B27242F90A500861B23;
+			remoteInfo = AltimetrikWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EDF47B28242F90A500861B23 /* AltimetrikWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltimetrikWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF47B2B242F90A500861B23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDF47B2D242F90A500861B23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDF47B2F242F90A500861B23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDF47B32242F90A500861B23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDF47B34242F90A700861B23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDF47B37242F90A700861B23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDF47B39242F90A700861B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF47B3E242F90A700861B23 /* AltimetrikWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AltimetrikWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF47B42242F90A700861B23 /* AltimetrikWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltimetrikWeatherTests.swift; sourceTree = "<group>"; };
+		EDF47B44242F90A700861B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDF47B25242F90A500861B23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF47B3B242F90A700861B23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDF47B1F242F90A500861B23 = {
+			isa = PBXGroup;
+			children = (
+				EDF47B2A242F90A500861B23 /* AltimetrikWeather */,
+				EDF47B41242F90A700861B23 /* AltimetrikWeatherTests */,
+				EDF47B29242F90A500861B23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDF47B29242F90A500861B23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDF47B28242F90A500861B23 /* AltimetrikWeather.app */,
+				EDF47B3E242F90A700861B23 /* AltimetrikWeatherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDF47B2A242F90A500861B23 /* AltimetrikWeather */ = {
+			isa = PBXGroup;
+			children = (
+				EDF47B2B242F90A500861B23 /* AppDelegate.swift */,
+				EDF47B2D242F90A500861B23 /* SceneDelegate.swift */,
+				EDF47B2F242F90A500861B23 /* ViewController.swift */,
+				EDF47B31242F90A500861B23 /* Main.storyboard */,
+				EDF47B34242F90A700861B23 /* Assets.xcassets */,
+				EDF47B36242F90A700861B23 /* LaunchScreen.storyboard */,
+				EDF47B39242F90A700861B23 /* Info.plist */,
+			);
+			path = AltimetrikWeather;
+			sourceTree = "<group>";
+		};
+		EDF47B41242F90A700861B23 /* AltimetrikWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDF47B42242F90A700861B23 /* AltimetrikWeatherTests.swift */,
+				EDF47B44242F90A700861B23 /* Info.plist */,
+			);
+			path = AltimetrikWeatherTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDF47B27242F90A500861B23 /* AltimetrikWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF47B47242F90A700861B23 /* Build configuration list for PBXNativeTarget "AltimetrikWeather" */;
+			buildPhases = (
+				EDF47B24242F90A500861B23 /* Sources */,
+				EDF47B25242F90A500861B23 /* Frameworks */,
+				EDF47B26242F90A500861B23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AltimetrikWeather;
+			productName = AltimetrikWeather;
+			productReference = EDF47B28242F90A500861B23 /* AltimetrikWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDF47B3D242F90A700861B23 /* AltimetrikWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF47B4A242F90A700861B23 /* Build configuration list for PBXNativeTarget "AltimetrikWeatherTests" */;
+			buildPhases = (
+				EDF47B3A242F90A700861B23 /* Sources */,
+				EDF47B3B242F90A700861B23 /* Frameworks */,
+				EDF47B3C242F90A700861B23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDF47B40242F90A700861B23 /* PBXTargetDependency */,
+			);
+			name = AltimetrikWeatherTests;
+			productName = AltimetrikWeatherTests;
+			productReference = EDF47B3E242F90A700861B23 /* AltimetrikWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDF47B20242F90A500861B23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Alberto Echeverri";
+				TargetAttributes = {
+					EDF47B27242F90A500861B23 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					EDF47B3D242F90A700861B23 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EDF47B27242F90A500861B23;
+					};
+				};
+			};
+			buildConfigurationList = EDF47B23242F90A500861B23 /* Build configuration list for PBXProject "AltimetrikWeather" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDF47B1F242F90A500861B23;
+			productRefGroup = EDF47B29242F90A500861B23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDF47B27242F90A500861B23 /* AltimetrikWeather */,
+				EDF47B3D242F90A700861B23 /* AltimetrikWeatherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDF47B26242F90A500861B23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF47B38242F90A700861B23 /* LaunchScreen.storyboard in Resources */,
+				EDF47B35242F90A700861B23 /* Assets.xcassets in Resources */,
+				EDF47B33242F90A500861B23 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF47B3C242F90A700861B23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDF47B24242F90A500861B23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF47B30242F90A500861B23 /* ViewController.swift in Sources */,
+				EDF47B2C242F90A500861B23 /* AppDelegate.swift in Sources */,
+				EDF47B2E242F90A500861B23 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF47B3A242F90A700861B23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF47B43242F90A700861B23 /* AltimetrikWeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDF47B40242F90A700861B23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDF47B27242F90A500861B23 /* AltimetrikWeather */;
+			targetProxy = EDF47B3F242F90A700861B23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDF47B31242F90A500861B23 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF47B32242F90A500861B23 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDF47B36242F90A700861B23 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF47B37242F90A700861B23 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDF47B45242F90A700861B23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDF47B46242F90A700861B23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDF47B48242F90A700861B23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MXS3NW52ST;
+				INFOPLIST_FILE = AltimetrikWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.worx.AltimetrikWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDF47B49242F90A700861B23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MXS3NW52ST;
+				INFOPLIST_FILE = AltimetrikWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.worx.AltimetrikWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EDF47B4B242F90A700861B23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MXS3NW52ST;
+				INFOPLIST_FILE = AltimetrikWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.worx.AltimetrikWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AltimetrikWeather.app/AltimetrikWeather";
+			};
+			name = Debug;
+		};
+		EDF47B4C242F90A700861B23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MXS3NW52ST;
+				INFOPLIST_FILE = AltimetrikWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.worx.AltimetrikWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AltimetrikWeather.app/AltimetrikWeather";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDF47B23242F90A500861B23 /* Build configuration list for PBXProject "AltimetrikWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF47B45242F90A700861B23 /* Debug */,
+				EDF47B46242F90A700861B23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDF47B47242F90A700861B23 /* Build configuration list for PBXNativeTarget "AltimetrikWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF47B48242F90A700861B23 /* Debug */,
+				EDF47B49242F90A700861B23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDF47B4A242F90A700861B23 /* Build configuration list for PBXNativeTarget "AltimetrikWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF47B4B242F90A700861B23 /* Debug */,
+				EDF47B4C242F90A700861B23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDF47B20242F90A500861B23 /* Project object */;
+}
