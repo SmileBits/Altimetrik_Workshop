@@ -14,13 +14,77 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DW1-Jp-Y0i">
+                                <rect key="frame" x="20" y="44" width="374" height="95"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8c-6Z-qXY">
+                                        <rect key="frame" x="8" y="8" width="260" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="O9Y-yB-8wJ"/>
+                                            <constraint firstAttribute="width" constant="260" id="dkg-SP-AWk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-TT-wf7">
+                                        <rect key="frame" x="8" y="50" width="260" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="cVY-xc-bFc"/>
+                                            <constraint firstAttribute="width" constant="260" id="lfs-8m-W4e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xw8-zH-ufC">
+                                        <rect key="frame" x="298" y="21" width="56" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="PDa-f4-iqe"/>
+                                            <constraint firstAttribute="height" constant="50" id="et5-Eh-9fA"/>
+                                        </constraints>
+                                        <state key="normal" title="Search" image="magnifyingglass" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="xw8-zH-ufC" firstAttribute="leading" secondItem="o8c-6Z-qXY" secondAttribute="trailing" constant="30" id="6hi-x0-BIc"/>
+                                    <constraint firstItem="o8c-6Z-qXY" firstAttribute="leading" secondItem="DW1-Jp-Y0i" secondAttribute="leading" constant="8" id="BZB-dA-GLB"/>
+                                    <constraint firstAttribute="height" constant="95" id="Qe8-6m-DrD"/>
+                                    <constraint firstItem="xw8-zH-ufC" firstAttribute="top" secondItem="DW1-Jp-Y0i" secondAttribute="top" constant="21" id="YGS-ij-1a7"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xw8-zH-ufC" secondAttribute="trailing" constant="20" symbolic="YES" id="aNn-5T-dxo"/>
+                                    <constraint firstItem="o8c-6Z-qXY" firstAttribute="top" secondItem="DW1-Jp-Y0i" secondAttribute="top" constant="8" id="aus-Ii-pbY"/>
+                                    <constraint firstItem="IRc-TT-wf7" firstAttribute="leading" secondItem="DW1-Jp-Y0i" secondAttribute="leading" constant="8" id="jgi-0X-cwS"/>
+                                    <constraint firstAttribute="bottom" secondItem="IRc-TT-wf7" secondAttribute="bottom" constant="11" id="kov-dt-ioR"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j4L-KF-IaV">
+                                <rect key="frame" x="20" y="147" width="374" height="715"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91574238989637302" green="0.91574238989637302" blue="0.91574238989637302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DW1-Jp-Y0i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GZl-FD-UPN"/>
+                            <constraint firstItem="DW1-Jp-Y0i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YYs-8Q-YGD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DW1-Jp-Y0i" secondAttribute="trailing" constant="20" id="c25-WC-IhE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="latitudeTextField" destination="o8c-6Z-qXY" id="SZz-Oe-6zy"/>
+                        <outlet property="longitudeTextField" destination="IRc-TT-wf7" id="b6n-SN-DuD"/>
+                        <outlet property="mapView" destination="j4L-KF-IaV" id="c46-4n-Ing"/>
+                        <outlet property="searchButton" destination="xw8-zH-ufC" id="5Bg-kB-V8J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="127"/>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

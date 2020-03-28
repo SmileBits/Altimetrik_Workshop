@@ -14,6 +14,24 @@ struct WeatherViewModel{
     private var longitude   :Double
     private var timezone    :String
     
+    var lat : String{
+        get{
+            return "Latitude: \(latitude)"
+        }
+    }
+    
+    var long : String{
+        get {
+            return "Longitude: \(longitude)"
+        }
+    }
+    
+    var timeZoneDescription : String{
+        get{
+            return "Region: \(timezone)"
+        }
+    }
+    
     init(_ weather:Weather) {
         self.latitude = weather.latitude
         self.longitude = weather.longitude

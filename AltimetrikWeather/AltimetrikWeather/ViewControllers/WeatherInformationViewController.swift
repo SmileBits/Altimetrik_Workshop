@@ -8,36 +8,68 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class WeatherInformationViewController: UIViewController {
     
     private var weatherViewModel:WeatherViewModel?
-
+    private var location:CLLocationCoordinate2D?
+    
+    @IBOutlet weak var latitudeTextField: UITextField!
+    @IBOutlet weak var longitudeTextField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        searchButton.addTarget(self, action: #selector(didTapSearchButton(_:)), for: .touchUpInside)
+        latitudeTextField.delegate = self
+        longitudeTextField.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //Testing location coordinatesw: 37.8267,-122.4233
-        APIHandler.sharedInstance.getWeatherInformation(with: CLLocationCoordinate2D(latitude: 37.8267, longitude: -122.4233)) { (weather, error) in
-            if let _ = error{
-                print(error?.localizedDescription ?? "Erro retrieving data")
+    @objc private func didTapSearchButton(_ sender:UIButton){
+        if let latitudeText:String = latitudeTextField.text, let longitudeText:String = longitudeTextField.text{
+            //We must be absolutely sure we got proper values.
+            guard let latitude:Double = Double(latitudeText), let longitude:Double = Double(longitudeText) else {return}
+            let inputLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            APIHandler.sharedInstance.getWeatherInformation(with: inputLocation) { (weather, error) in
+                if let _ = error{
+                                print(error?.localizedDescription ?? "Erro retrieving data")
+                            }
+                            //Response successful
+                            if let uWeather = weather{
+                                self.weatherViewModel = WeatherViewModel(uWeather)
+                                DispatchQueue.main.async { [weak self] in
+                                    self?.updateMapView()
+                                }
+                            }else{
+                                print("Weather is nil") //I don't think we'll hit this block but better safe than sorry
+                            }
             }
-            //Response successful
-            if let uWeather = weather{
-                self.weatherViewModel = WeatherViewModel(uWeather)
-//                DispatchQueue.main.async { [weak self] in
-//                    //Do UI Updates
-//                }
-            }else{
-                print("Weather is nil") //I don't think we'll hit this block but better safe than sorry
-            }
-            
+        }else{
+            //Unproper values
         }
     }
+    
+    private func updateMapView(){
+        print("\(weatherViewModel?.lat ?? "") - \(weatherViewModel?.long ?? "") - \(weatherViewModel?.timeZoneDescription ?? "")")
+    }
 
+}
 
+extension WeatherInformationViewController : UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let value = textField.text{
+            //Proper parsing
+            if let _ = Double(value){
+                //Input is proper.
+            }else{
+                textField.text = ""
+                textField.placeholder = "Please input a numerical value"
+            }
+        }
+    }
 }
 
