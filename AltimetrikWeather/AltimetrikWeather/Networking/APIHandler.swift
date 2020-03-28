@@ -32,8 +32,14 @@ struct APIHandler{
                                 completion(nil,.unableToParseWeatherInformation(""))
                                 return
                             }
-                            let weatherInformation = try? self.decoder.decode(Weather.self, from: retrievedData)
-                            completion(weatherInformation,nil)
+                            do{
+                                let weatherInformation = try self.decoder.decode(Weather.self, from: retrievedData)
+                                completion(weatherInformation,nil)
+                            }catch(let parsingError){
+                                print(parsingError.localizedDescription)
+                                completion(nil,.unableToParseWeatherInformation(error?.localizedDescription ?? ""))
+                            }
+                            
                         }
                     }
                 }

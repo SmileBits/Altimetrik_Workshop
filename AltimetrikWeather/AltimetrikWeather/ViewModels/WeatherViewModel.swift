@@ -33,8 +33,8 @@ struct WeatherViewModel{
     }
     
     init(_ weather:Weather) {
-        self.latitude = weather.latitude
-        self.longitude = weather.longitude
-        self.timezone = weather.timezone
+        self.latitude = weather.latitude ?? 0
+        self.longitude = weather.longitude ?? 0
+        self.timezone = weather.timezone ?? ""
     }
 }
