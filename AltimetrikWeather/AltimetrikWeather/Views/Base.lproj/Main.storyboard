@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DW1-Jp-Y0i">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DW1-Jp-Y0i" customClass="RoundUIView" customModule="AltimetrikWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="44" width="374" height="95"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8c-6Z-qXY">
@@ -58,6 +58,11 @@
                                     <constraint firstItem="IRc-TT-wf7" firstAttribute="leading" secondItem="DW1-Jp-Y0i" secondAttribute="leading" constant="8" id="jgi-0X-cwS"/>
                                     <constraint firstAttribute="bottom" secondItem="IRc-TT-wf7" secondAttribute="bottom" constant="11" id="kov-dt-ioR"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j4L-KF-IaV">
                                 <rect key="frame" x="20" y="147" width="374" height="715"/>

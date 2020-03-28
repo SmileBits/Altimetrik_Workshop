@@ -21,12 +21,17 @@ class WeatherInformationViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    //This is the detail view that shows detailed information about the location.
+    var detailWeatherView:DetailWeatherView?
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         searchButton.addTarget(self, action: #selector(didTapSearchButton(_:)), for: .touchUpInside)
         latitudeTextField.delegate = self
         longitudeTextField.delegate = self
+        mapView.layer.cornerRadius = 25
     }
     
     @objc private func didTapSearchButton(_ sender:UIButton){
