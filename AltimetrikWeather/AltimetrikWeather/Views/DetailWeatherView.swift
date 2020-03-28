@@ -52,8 +52,9 @@ class DetailWeatherView : RoundUIView{
     
     private func setupView(){
         detailSwitch.addTarget(self, action: #selector(didTapSwitch(_:)), for: .valueChanged)
-        setDailyGraph()
+        setHourlyGraph()
         addSubview(detailSwitch)
+        detailSwitch.selectedSegmentIndex = 0
         addSubview(chartViewContainer)
         NSLayoutConstraint.activate([
             detailSwitch.topAnchor.constraint(equalTo: topAnchor, constant: 6),
@@ -90,58 +91,11 @@ class DetailWeatherView : RoundUIView{
         dailyChartView?.translatesAutoresizingMaskIntoConstraints = false
         dailyChartView?.tag = 20
         
-        //MARK: TESTING DATA
-        let yVals1 = (0..<14).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(8) + 50)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        let yVals2 = (0..<14).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(78) + 450)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        let yVals3 = (0..<14).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(78) + 500)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-
-        let set1 = LineChartDataSet(entries: yVals1, label: "DataSet 1")
-        set1.axisDependency = .left
-        set1.setColor(UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1))
-        set1.setCircleColor(.white)
-        set1.lineWidth = 2
-        set1.circleRadius = 3
-        set1.fillAlpha = 65/255
-        set1.fillColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
-        set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        set1.drawCircleHoleEnabled = false
+        dailyChartView?.setYAxisMaxWidth(.left, width: 2)
+        dailyChartView?.setVisibleXRangeMaximum(2)
         
-        let set2 = LineChartDataSet(entries: yVals2, label: "DataSet 2")
-        set2.axisDependency = .right
-        set2.setColor(.red)
-        set2.setCircleColor(.white)
-        set2.lineWidth = 2
-        set2.circleRadius = 3
-        set2.fillAlpha = 65/255
-        set2.fillColor = .red
-        set2.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        set2.drawCircleHoleEnabled = false
-
-        let set3 = LineChartDataSet(entries: yVals3, label: "DataSet 3")
-        set3.axisDependency = .right
-        set3.setColor(.yellow)
-        set3.setCircleColor(.white)
-        set3.lineWidth = 2
-        set3.circleRadius = 3
-        set3.fillAlpha = 65/255
-        set3.fillColor = UIColor.yellow.withAlphaComponent(200/255)
-        set3.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        set3.drawCircleHoleEnabled = false
-        
-        let data = LineChartData(dataSets: [set1, set2, set3])
-        data.setValueTextColor(.white)
-        data.setValueFont(.systemFont(ofSize: 9))
-        
-        dailyChartView?.data = data
+        let dataSet = ChartData(dataSet: viewModel!.weatherByTheDayDataSet)
+        dailyChartView?.data = dataSet
         
         chartViewContainer.addSubview(dailyChartView!)
         
@@ -165,59 +119,10 @@ class DetailWeatherView : RoundUIView{
         hourlyChartView?.isUserInteractionEnabled = false
         hourlyChartView?.tag = 21
      
-        //MARK: TESTING DATA
-        let yVals1 = (0..<14).map { (i) -> ChartDataEntry in
-            //let mult = 90 / 2
-            let val = Double(arc4random_uniform(8) + 50)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        let yVals2 = (0..<14).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(87) + 450)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        let yVals3 = (0..<14).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(90) + 500)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-
-        let set1 = LineChartDataSet(entries: yVals1, label: "DataSet 1")
-        set1.axisDependency = .left
-        set1.setColor(UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1))
-        set1.setCircleColor(.white)
-        set1.lineWidth = 2
-        set1.circleRadius = 3
-        set1.fillAlpha = 65/255
-        set1.fillColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
-        set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        set1.drawCircleHoleEnabled = false
-        
-        let set2 = LineChartDataSet(entries: yVals2, label: "DataSet 2")
-        set2.axisDependency = .right
-        set2.setColor(.blue)
-        set2.setCircleColor(.white)
-        set2.lineWidth = 2
-        set2.circleRadius = 3
-        set2.fillAlpha = 65/255
-        set2.fillColor = .red
-        set2.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        set2.drawCircleHoleEnabled = false
-
-        let set3 = LineChartDataSet(entries: yVals3, label: "DataSet 3")
-        set3.axisDependency = .right
-        set3.setColor(.green)
-        set3.setCircleColor(.white)
-        set3.lineWidth = 2
-        set3.circleRadius = 3
-        set3.fillAlpha = 65/255
-        set3.fillColor = UIColor.yellow.withAlphaComponent(200/255)
-        set3.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        set3.drawCircleHoleEnabled = false
-        
-        let data = LineChartData(dataSets: [set1, set2, set3])
-        data.setValueTextColor(.white)
-        data.setValueFont(.systemFont(ofSize: 9))
-        
-        hourlyChartView?.data = data
+        let dataSet = ChartData(dataSet: viewModel!.weatherByTheDayDataSet)
+        hourlyChartView?.setYAxisMaxWidth(.left, width: 2)
+        hourlyChartView?.setVisibleXRangeMaximum(2)
+        hourlyChartView?.data = dataSet
         
         chartViewContainer.addSubview(hourlyChartView!)
         

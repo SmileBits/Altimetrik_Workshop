@@ -30,5 +30,13 @@ class AltimetrikWeatherTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testUserLocation(){
+        //XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, <#T##expression2: Equatable##Equatable#>)
+    }
+    
+    func testWeatherViewModer(){
+        
+    }
 
 }
